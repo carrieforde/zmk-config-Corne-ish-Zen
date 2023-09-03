@@ -38,56 +38,56 @@
 //                     | ALT | LWR | SPC |   | ENT | RSE  | ALT |
                         label = "QWERTY";
                         bindings = <
-   &kp TAB        AS(Q) AS(W) AS(E) AS(R) AS(T)   AS(Y) AS(U)  AS(I)     AS(O)   AS(P)    AS(KP_MINUS)
+   &kp TAB        AS(Q) AS(W) AS(E) AS(R) AS(T)   AS(Y) AS(U)  AS(I)     AS(O)   AS(P)    AS(MINUS)
    &kp LCTRL      AS(A) AS(S) AS(D) AS(F) AS(G)   AS(H) AS(J)  AS(K)     AS(L)   AS(SEMI) AS(SQT)
    &mt LSHFT LPAR AS(Z) AS(X) AS(C) AS(V) AS(B)   AS(N) AS(M)  AS(COMMA) AS(DOT) AS(FSLH) &mt RSHFT RPAR
-                               &kp LCMD  &mo 1 &kp SPACE &kp RET &mo 2  &kp RALT
+                               &kp LCMD  &mo 1 &kp SPACE &kp RET &mo 2  &mt RALT DEL
                         >;
                 };
 
                 lower_layer {
-// ----------------------------------------------------------------------------------
-// |    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |    DEL    |
-// |    |  _  |  +  |  {  |  }  | "|" |   | LFT | DWN |  UP | RGT |  `  |     ~     |
-// |    | ESC | GUI | ALT | CAPS|  "  |   | HOME| END | PGUP| PGDN| PRSC| SHFT(RET) |
-//                       |     |     | RET | ADJ |     |
+// ----------------------------------------------------------------------------
+// |    |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL |
+// |    |  _  |  +  |  {  |  }  | "|" |   | LFT | DWN |  UP | RGT |  `  |  ~  |
+// |    | ESC | GUI | ALT | CAPS|  "  |   | HOME| END | PGUP| PGDN| PRSC|     |
+//                        |     |     |   | RET | ADJ |     |
                         label = "LOWER";
                         bindings = <
-   &trans &kp EXCL  &kp AT      &kp HASH &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
-   &trans &kp UNDER &kp KP_PLUS &kp LBRC &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp GRAVE
-   &trans &kp ESC   &kp LGUI    &kp LALT &kp CLCK &kp SQT        &kp HOME  &kp END  &kp PG_UP &kp PG_DN &kp PSCRN &mt RSHFT RET
+   &trans &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
+   &trans &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp TILDE
+   &trans &kp ESC   &kp LGUI  &kp LALT &kp CLCK &kp SQT        &kp HOME  &kp END  &kp PG_UP &kp PG_DN &kp PSCRN &trans
                                 &trans   &trans   &trans         &trans    &mo 3    &kp BSPC
                         >;
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 // |    |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
-// |    |  -  |  =  |  [  |  ]  |  \  |   | F1  | F2  | F3  | F4  | F5  | F6  |
-// |    | ESC | GUI | ALT | CAPS|  "  |   | F7  | F8  | F9  | F10 | F11 | F12 |
-//                       |     | ADJ | BKSP |    |     |
+// |    |  -  |  =  |  [  |  ]  |  \  |   |  .  |  4  |  5  |  6  |  -  |  /  |
+// |    | ESC | GUI | ALT | CAPS|  "  |   |  0  |  1  |  2  |  3  | F11 |  *  |
+//                        |     | ADJ |   |    |     |
                         label = "RAISE";
                         bindings = <
-   &trans &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
-   &trans &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH      &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6
-   &trans &kp ESC   &kp LGUI  &kp RALT  &kp CLCK  &kp SQT       &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-                              &trans    &mo 3     &trans        &trans    &trans    &trans
+   &trans &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp DEL
+   &trans &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH      &kp DOT    &kp N4    &kp N5    &kp N6    &kp MINUS  &kp SLASH
+   &trans &kp ESC   &kp LGUI  &kp RALT  &kp CLCK  &kp SQT       &kp N0     &kp N1    &kp N2    &kp N3    &kp PLUS   &kp ASTRK
+                              &trans    &mo 3     &trans        &trans     &trans    &trans
                         >;
                 };
 
                 adjust_layer {
-// -----------------------------------------------------------------------------------------
-// | BTCLR| BT0      | BT1    | BT2      | BT3   | BT4 |       | RGB TOG  |          |          |          |  | RESET  |
-// |      | K_PREV   | K_PP   | K_NEXT   |       |     |       | RGB ANI+ | RGB SAT+ | RGB HUE+ | RGB BRI+ |  |        |
-// |      | K_VOL_DN | K_MUTE | K_VOL_UP |       |     |       | RGB ANI- | RGB SAT- | RGB HUE- | RGB BRI+ |  |        |
-//                            |          |       |     |       |          |          |          |
+// -----------------------------------------------------------------------
+// |       |     |     |     |     |     |  |   |       |   |   |   |   |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |  |   | RESET |   |   |   |   |
+// |       |     |     |     |     |     |  |   |       |   |   |   |   |
+//                           |     |     |  |   |       |   |   |
 
                         label = "ADJUST";
                         bindings = <
-    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none  &none  &none  &none  &none  &kp C_RESET
-    &none      &kp K_PREV   &kp K_PP     &kp K_NEXT   &none        &none             &none  &none  &none  &none  &none  &none
-    &none      &kp K_VOL_DN &kp K_MUTE   &kp K_VOL_UP &none        &none             &none  &none  &none  &none  &none  &none
-                                         &trans       &trans       &none            &trans &trans &trans
+    &none      &none        &none        &none         &none         &none             &none        &none  &none  &none  &none  &none
+    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &kp C_RESET  &none  &none  &none  &none  &none
+    &none      &none        &none        &none         &none         &none             &none        &none  &none  &none  &none  &none
+                                         &trans        &trans        &none             &trans       &trans &trans
                         >;
                 };
         };
