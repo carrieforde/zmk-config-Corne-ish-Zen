@@ -13,17 +13,24 @@
 #define RAISE 2
 #define ADJUST 3
 
+// Define autoshift
 #define AS(keycode) &as LS(keycode) keycode
 
+// Space cadet
 #define L_SHFT_PAR &mt LSHFT LPAR
 #define R_SHFT_PAR &mt RSHFT RPAR
 
+// Tap for Esc, hold for Ctrl
 #define CTR_ESC &mt LCTRL ESC
+
+// Tap for backspace, hold for Option
 #define BSPC_OPT &mt RALT BSPC
 
-#define LWR &mo 1
-#define RSE &mo 2
-#define ADJ &mo 3
+// Screenshot
+#define SCRN_SHOT LCMD(LS(4))
+
+// Screen recording
+#define SCRN_REC LCMD(LS(5))
 
 &mt {
 	tapping_term_ms = <150>;
@@ -56,7 +63,7 @@
    &kp TAB    AS(Q) AS(W) AS(E)     AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)   AS(P)    AS(MINUS)
    CTR_ESC    AS(A) AS(S) AS(D)     AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)   AS(SEMI) AS(SQT)
    L_SHFT_PAR AS(Z) AS(X) AS(C)     AS(V) AS(B)     AS(N)   AS(M)  AS(COMMA) AS(DOT) AS(FSLH) &mt RSHFT RPAR
-                          &kp LCMD  LWR   &kp SPACE &kp RET RSE  BSPC_OPT
+                          &kp LCMD  LOWER &kp SPACE &kp RET RAISE  BSPC_OPT
                         >;
                 };
 
@@ -68,10 +75,10 @@
 //                        |     |     |   | RET | ADJ |     |
                         label = "LOWER";
                         bindings = <
-   &trans &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
-   &trans &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp TILDE
-   &trans &kp ESC   &kp LGUI  &kp LALT &kp CLCK &kp SQT        &kp HOME  &kp END  &kp PG_UP &kp PG_DN &kp PSCRN &trans
-                              &trans   &trans   &trans         &trans    ADJ      &kp BSPC
+   &trans &kp EXCL  &kp AT    &kp HASH  &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
+   &trans &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE       &kp LEFT  &kp DOWN &kp UP    &kp RIGHT &kp GRAVE &kp TILDE
+   &trans &kp ESC   SCRN_REC  SCRN_SHOT &kp CLCK &kp SQT        &kp HOME  &kp END  &kp PG_UP &kp PG_DN &kp PSCRN &trans
+                              &trans    &trans   &trans         &trans    ADJUST   &kp BSPC
                         >;
                 };
 
@@ -85,8 +92,8 @@
                         bindings = <
    &trans &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp DEL
    &trans &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp BSLH      &kp DOT    &kp N4    &kp N5    &kp N6    &kp MINUS  &kp SLASH
-   &trans &kp ESC   &kp LGUI  &kp RALT  &kp CLCK  &kp SQT       &kp N0     &kp N1    &kp N2    &kp N3    &kp PLUS   &kp ASTRK
-                              &trans    ADJ       &trans        &trans     &trans    &trans
+   &trans &kp ESC   &kp LGUI  &kp RALT  &kp CLCK  &kp DQT       &kp N0     &kp N1    &kp N2    &kp N3    &kp PLUS   &kp ASTRK
+                              &trans    ADJUST    &trans        &trans     &trans    &trans
                         >;
                 };
 
